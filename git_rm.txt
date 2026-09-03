@@ -1,0 +1,9 @@
+Question 1. Does the file exist on your computer after running the git rm command?
+Answer.
+
+Question 2. When must you use git rm vs. manually deleting a file?
+Answer.
+
+Question 3. How can you undo restore an accidentally deleted, by the git rm command, file?
+Answer.
+

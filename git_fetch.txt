@@ -1,0 +1,8 @@
+Question 1. Do you see the branch feature-branch-fetch?.
+Answer.
+
+Question 2. Do you see the new branch locally now?
+Answer.
+
+Question 3. What would happen if we run the command git fetch --all?
+Answer.

@@ -1,0 +1,5 @@
+Question 1. Can you revert multiple commits?
+Answer.
+
+Question 2. What happens if there is conflict during a revert?
+Answer.
