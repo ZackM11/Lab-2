@@ -1,0 +1,20 @@
+zacka@Zackmarsh:~/Lab-2$ git checkout "Zack's_Branch"
+Switched to branch 'Zack's_Branch'
+Your branch is up to date with 'origin/Zack's_Branch'.
+zacka@Zackmarsh:~/Lab-2$ git merge main
+Auto-merging main.cpp
+CONFLICT (content): Merge conflict in main.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+zacka@Zackmarsh:~/Lab-2$ git add main.cpp
+zacka@Zackmarsh:~/Lab-2$ git commit -m "Merging changes with return value 2"
+[Zack's_Branch ad61d60] Merging changes with return value 2
+zacka@Zackmarsh:~/Lab-2$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 368 bytes | 368.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:ZackM11/Lab-2.git
+   870341d..ad61d60  Zack's_Branch -> Zack's_Branch
