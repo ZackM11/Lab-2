@@ -10,5 +10,5 @@ std::vector<bool> GreaterMask(std::vector<int> nums, int greater_than);
 int main(){
     //call each of the above functions
     //conflict resolve to return 2
-    return 0;
+    return 2;
 }
