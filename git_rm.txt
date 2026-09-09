@@ -1,9 +1,27 @@
 Question 1. Does the file exist on your computer after running the git rm command?
-Answer.
+Answer. No
 
 Question 2. When must you use git rm vs. manually deleting a file?
-Answer.
+Answer. When you want github to track that you deleted the file. 
 
 Question 3. How can you undo restore an accidentally deleted, by the git rm command, file?
-Answer.
+Answer.  git restore <filename>
 
+
+
+
+zacka@Zackmarsh:~/Lab-2$ touch remove.txt
+zacka@Zackmarsh:~/Lab-2$ git add remove.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "adding remove.txt for rm activity"
+[main d633d4a] adding remove.txt for rm activity
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 remove.txt
+zacka@Zackmarsh:~/Lab-2$ git rm remove.txt
+rm 'remove.txt'
+zacka@Zackmarsh:~/Lab-2$ ls
+README.md  git_fetch.txt  git_log.txt             git_rebase.txt  git_rm.txt     main.cpp
+file1.txt  git_helper.sh  git_merge_conflict.txt  git_revert.txt  git_stash.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "attemting to remove tracking for remove.txt"
+[main 26bcc59] attemting to remove tracking for remove.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 remove.txt

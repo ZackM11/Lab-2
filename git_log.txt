@@ -15,7 +15,7 @@ zacka@Zackmarsh:~/Lab-2$ git log --graph
 | *   commit ad61d6047a98a0c9b7b04067e7ef4996b45aa4f3
 | |\  Merge: 870341d d2bffa3
 | |/  Author: ZackM11 <zackalimarsh@gmail.com>
-|/|   Date:   Thu Sep 3 10:44:40 2026 -0600
+|/|   Date:   Thu Sep 3 10:44:40 2026git  -0600
 | |   
 | |       Merging changes with return value 2
 | | 

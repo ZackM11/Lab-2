@@ -1,5 +1,105 @@
 Question 1. Were you able to make the switch?
-Answer.
+Answer. No i was not
 
 Question 2. What is the difference between git stash apply versus git stash pop.
 Answer.
+
+Apply restores the stashed changes but keeps the stash in the stash list. 
+While pop restores them and gets rid of the stash list.
+
+
+
+
+zacka@Zackmarsh:~/Lab-2$ git checkout -b bugfix-branch-stash
+Switched to a new branch 'bugfix-branch-stash'
+zacka@Zackmarsh:~/Lab-2$ git add README.md
+zacka@Zackmarsh:~/Lab-2$ git commit -m "updated text in README.md for stash activity"
+[bugfix-branch-stash 44a70b4] updated text in README.md for stash activity
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+zacka@Zackmarsh:~/Lab-2$ git checkout main
+M       git_log.txt
+M       git_rebase.txt
+M       git_rm.txt
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+zacka@Zackmarsh:~/Lab-2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_log.txt
+        modified:   git_rebase.txt
+        modified:   git_rm.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+zacka@Zackmarsh:~/Lab-2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   git_log.txt
+        modified:   git_rebase.txt
+        modified:   git_rm.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+zacka@Zackmarsh:~/Lab-2$ git checkout bugfix-branch-stash
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+zacka@Zackmarsh:~/Lab-2$ git stash push -m "Unfinished README.md"
+Saved working directory and index state On main: Unfinished README.md
+zacka@Zackmarsh:~/Lab-2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+zacka@Zackmarsh:~/Lab-2$ git stash list
+stash@{0}: On main: Unfinished README.md
+stash@{1}: WIP on feature-branch-rebase: 8464f92 adding file1.txt for rebase activity
+zacka@Zackmarsh:~/Lab-2$ git checkout bugfix-branch-stash
+Switched to branch 'bugfix-branch-stash'
+zacka@Zackmarsh:~/Lab-2$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+zacka@Zackmarsh:~/Lab-2$ git stash pop
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   git_log.txt
+        modified:   git_rebase.txt
+        modified:   git_rm.txt
+        modified:   git_stash.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (c05bb4b06ca86cd8b07b6e12439cbbed637d778d)
+zacka@Zackmarsh:~/Lab-2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   git_log.txt
+        modified:   git_rebase.txt
+        modified:   git_rm.txt
+        modified:   git_stash.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")   

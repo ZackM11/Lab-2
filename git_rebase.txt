@@ -1,5 +1,46 @@
 Question 1. What changed before and after the rebase?
-Answer.
+Answer. The file1 was added to my other branch. 
 
 Question 2. How is git rebase different from git merge in this context?
-Answer.
+Answer. Rather than merging the branch with the main i just took what main had to still keep my branch updated but seperate. 
+
+
+
+
+
+
+
+zacka@Zackmarsh:~/Lab-2$ git log --oneline --graph
+* 8464f92 (HEAD -> feature-branch-rebase) adding file1.txt for rebase activity
+* 190bfee (origin/Zack's_Branch, Zack's_Branch) This is my commit
+*   6ef969b Merge pull request #1 from ZackM11/Zack's_Branch
+|\  
+| *   ad61d60 Merging changes with return value 2
+| |\  
+| |/  
+|/|   
+* | d2bffa3 Version 1 - main : 2
+| * 870341d Version 1 - Zack : 1
+|/  
+* 4114594 updated README.md with team details
+* 6cca669 Initial commit
+zacka@Zackmarsh:~/Lab-2$ git rebase main
+warning: skipped previously applied commit 8464f92
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config set advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/feature-branch-rebase.
+zacka@Zackmarsh:~/Lab-2$ git log --oneline --graph
+* 5666452 (HEAD -> feature-branch-rebase) This is my commit
+* 7a385d6 (main) adding file1.txt for rebase activity
+* 100b5bd (origin/main, origin/HEAD) completed the git log
+*   6ef969b Merge pull request #1 from ZackM11/Zack's_Branch
+|\  
+| *   ad61d60 Merging changes with return value 2
+| |\  
+| |/  
+|/|   
+* | d2bffa3 Version 1 - main : 2
+| * 870341d Version 1 - Zack : 1
+|/  
+* 4114594 updated README.md with team details
+* 6cca669 Initial commit

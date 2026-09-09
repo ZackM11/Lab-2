@@ -1,5 +1,110 @@
 Question 1. Can you revert multiple commits?
-Answer.
+Answer. Yes either as a list or indavidually.
 
 Question 2. What happens if there is conflict during a revert?
-Answer.
+Answer. Git paused the revert and showed me the conflicting files. 
+
+
+zacka@Zackmarsh:~/Lab-2$ touch revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ code revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "revert activity commit 2"
+[main 4105e50] revert activity commit 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "revert activity commit 3"
+[main e69b48d] revert activity commit 3
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "revert activity commit 4"
+[main 68d28da] revert activity commit 4
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "revert activity commit 5"
+[main 3bd191d] revert activity commit 5
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git commit -m "revert activity commit 6"
+[main da0d702] revert activity commit 6
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+zacka@Zackmarsh:~/Lab-2$ git log --oneline
+da0d702 (HEAD -> main) revert activity commit 6
+3bd191d revert activity commit 5
+68d28da revert activity commit 4
+e69b48d revert activity commit 3
+4105e50 revert activity commit 2
+26bcc59 attemting to remove tracking for remove.txt
+d633d4a adding remove.txt for rm activity
+7a385d6 adding file1.txt for rebase activity
+100b5bd (origin/main, origin/HEAD) completed the git log
+6ef969b Merge pull request #1 from ZackM11/Zack's_Branch
+ad61d60 Merging changes with return value 2
+d2bffa3 Version 1 - main : 2
+870341d Version 1 - Zack : 1
+4114594 updated README.md with team details
+6cca669 Initial commit
+zacka@Zackmarsh:~/Lab-2$ git revert 3bd191d
+Auto-merging revert-activity.txt
+CONFLICT (content): Merge conflict in revert-activity.txt
+error: could not revert 3bd191d... revert activity commit 5
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+zacka@Zackmarsh:~/Lab-2$ git log --oneline
+da0d702 (HEAD -> main) revert activity commit 6
+3bd191d revert activity commit 5
+68d28da revert activity commit 4
+e69b48d revert activity commit 3
+4105e50 revert activity commit 2
+26bcc59 attemting to remove tracking for remove.txt
+d633d4a adding remove.txt for rm activity
+7a385d6 adding file1.txt for rebase activity
+100b5bd (origin/main, origin/HEAD) completed the git log
+6ef969b Merge pull request #1 from ZackM11/Zack's_Branch
+ad61d60 Merging changes with return value 2
+d2bffa3 Version 1 - main : 2
+870341d Version 1 - Zack : 1
+4114594 updated README.md with team details
+6cca669 Initial commit
+zacka@Zackmarsh:~/Lab-2$ git add revert-activity.txt
+zacka@Zackmarsh:~/Lab-2$ git revert --continue
+[main fd1a422] Revert "revert activity commit 5"
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+zacka@Zackmarsh:~/Lab-2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 9 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   git_log.txt
+        modified:   git_rebase.txt
+        modified:   git_rm.txt
+        modified:   git_stash.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+zacka@Zackmarsh:~/Lab-2$ git log --oneline
+fd1a422 (HEAD -> main) Revert "revert activity commit 5"
+da0d702 revert activity commit 6
+3bd191d revert activity commit 5
+68d28da revert activity commit 4
+e69b48d revert activity commit 3
+4105e50 revert activity commit 2
+26bcc59 attemting to remove tracking for remove.txt
+d633d4a adding remove.txt for rm activity
+7a385d6 adding file1.txt for rebase activity
+100b5bd (origin/main, origin/HEAD) completed the git log
+6ef969b Merge pull request #1 from ZackM11/Zack's_Branch
+ad61d60 Merging changes with return value 2
+d2bffa3 Version 1 - main : 2
+870341d Version 1 - Zack : 1
+4114594 updated README.md with team details
+6cca669 Initial commit
+zacka@Zackmarsh:~/Lab-2$ 
