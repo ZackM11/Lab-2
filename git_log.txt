@@ -1,2 +1,46 @@
 Question 1. When was the file main.cpp last modified?
-Answer.
+Answer. September 3 at 10:44:40.
+
+
+zacka@Zackmarsh:~/Lab-2$ git log --graph
+*   commit 6ef969be9ad5b2c5d9a22c6a3dde7beba98184b0 (HEAD -> main, origin/main, origin/HEAD)
+|\  Merge: d2bffa3 ad61d60
+| | Author: Zachary M. <zackalimarsh@gmail.com>
+| | Date:   Thu Sep 3 11:02:24 2026 -0600
+| | 
+| |     Merge pull request #1 from ZackM11/Zack's_Branch
+| |     
+| |     Zack's branch
+| |   
+| *   commit ad61d6047a98a0c9b7b04067e7ef4996b45aa4f3
+| |\  Merge: 870341d d2bffa3
+| |/  Author: ZackM11 <zackalimarsh@gmail.com>
+|/|   Date:   Thu Sep 3 10:44:40 2026 -0600
+| |   
+| |       Merging changes with return value 2
+| | 
+* | commit d2bffa35fb87be1716225722e296c14d3155ada8
+| | Author: ZackM11 <zackalimarsh@gmail.com>
+| | Date:   Thu Sep 3 10:42:22 2026 -0600
+
+
+
+zacka@Zackmarsh:~/Lab-2$ git log main.cpp
+commit ad61d6047a98a0c9b7b04067e7ef4996b45aa4f3
+Merge: 870341d d2bffa3
+Author: ZackM11 <zackalimarsh@gmail.com>
+Date:   Thu Sep 3 10:44:40 2026 -0600
+
+    Merging changes with return value 2
+
+commit d2bffa35fb87be1716225722e296c14d3155ada8
+Author: ZackM11 <zackalimarsh@gmail.com>
+Date:   Thu Sep 3 10:42:22 2026 -0600
+
+    Version 1 - main : 2
+
+commit 870341dfb69b76c10aecfee587b72a75ad9ee5c7
+Author: ZackM11 <zackalimarsh@gmail.com>
+Date:   Thu Sep 3 10:39:00 2026 -0600
+
+    Version 1 - Zack : 1
